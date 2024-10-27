@@ -75,14 +75,14 @@ public class Mecanica : MonoBehaviour
             imgtres.GetComponent<Image>().sprite = imgmueble[imgI];
             nombre.GetComponent<Text>().text = muebleNombre[obj];
 
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.W))
             {
                 obj++;
                 imgE++;
                 imgI++;
             }
 
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.S))
             {
                 obj--;
                 imgE--;
@@ -237,6 +237,46 @@ public class Mecanica : MonoBehaviour
 
         void Controlador()
         {
+            angulos = new Vector3(angX, 0, 0);
+
+            if (Input.GetKeyDown(KeyCode.X)) angX = angX + 45;
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                if (objectSect.GetComponent<Rigidbody>() == null)
+                {
+                    objectSect.AddComponent<Rigidbody>();
+                }
+                objetoSeleccionado = null;
+                angX = 0;
+            }
+
+            Vector3 PosMueble = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 1000));
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.DrawRay(Camera.main.transform.position, PosMAM * 1000, Color.yellow);
+                RaycastHit hitInfo;
+                if (Physics.Raycast(Camera.main.transform.position, PosMAM, out hitInfo, 1000f))
+                {
+                    objectSect = hitInfo.collider.gameObject;
+                }
+            }
+
+            if (objetoSeleccionado != null)
+            {
+                if (objetoSeleccionado.tag == "vist")
+                {
+                    objetoSeleccionado = null;
+                }
+            }
+
+            if (objetoSeleccionado != null)
+            {
+                objetoSeleccionado.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 17));
+                objetoSeleccionado.transform.localEulerAngles = angulos;
+
+            }
 
         }
 
