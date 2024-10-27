@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CambiarEscenas : MonoBehaviour
+public class CambiarEscenados : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
