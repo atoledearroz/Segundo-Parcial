@@ -6,12 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Instrucciones.unity
-    guid: bb718dccb63796a499017f6cebfdb13a
-  - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: adab2f28f2eb96a439caeb58b7df42e0
   - enabled: 1
+    path: Assets/Scenes/Instrucciones.unity
+    guid: bb718dccb63796a499017f6cebfdb13a
+  - enabled: 1
+    path: "Assets/Scenes/Selecci\xF3ndeCasas.unity"
+    guid: a80ec1fd207d4c64f9815f13304bf36c
+  - enabled: 1
     path: Assets/Scenes/Juego.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/JuegoDos.unity
+    guid: 7d10a3042fa626d4c9f5035d4df4d426
+  - enabled: 1
+    path: Assets/Scenes/JuegoTres.unity
+    guid: bc3807e45fc7f7b4690716f340ac3a16
   m_configObjects: {}
